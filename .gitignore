@@ -1,3 +1,10 @@
+# IDE-specific files
+*.iml
+*.ipr
+*.iws
+.idea/
+.vscode/
+
 # Logs
 logs
 *.log
