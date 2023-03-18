@@ -44,17 +44,23 @@ The database is held within the container at `/etc/todos/todo.db`,
 so we can either mount the file itself to the host, or the whole dirrectory.  
 We're going to mount the whole directory:
 ```bash
-# First, make an empty dir wherever you want
+# First, delete the previous app, then make an empty dir wherever you want
+docker rm -f my-app
 mkdir data
 # Then run the container with mounting the host directory into the DB dir in the container as follows:
-docker run --name my-app -d -p 3000:3000 -v ./data:/etc/todos simple-db
+docker run --name my-app -d -p 3000:3000 -v $(pwd)/data:/etc/todos simple-db
 ```
 * Access the web page at http://localhost:3000
 * Add a few strings
+* See that the data is now synced into your computer under the `data` directory:  
+  ```bash
+  ls data
+  # todo.db
+  ```
 * then delete the container and recreate it  
   ```bash
   docker rm -f my-app
-  docker run --name my-app -d -p 3000:3000 -v ./data:/etc/todos simple-db
+  docker run --name my-app -d -p 3000:3000 -v $(pwd)/data:/etc/todos simple-db
   ```
 * Access again the web page at http://localhost:3000  
   Do you see your previous data now? :-)
