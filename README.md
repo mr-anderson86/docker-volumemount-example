@@ -3,7 +3,7 @@
 ## Description
 
 This repository represents a simple Javascript web application.  
-Originally taken from the very Docker `getting-started` image.  
+Originally taken from the very basic Docker `getting-started` image.  
 This app holds a very simple database where you can add/remove strings in it, nothing too smart.  
   
 The purpose of this project is to show the `Docker Volume Mount` concept and use case.  
