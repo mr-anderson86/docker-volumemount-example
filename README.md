@@ -9,6 +9,9 @@ This app holds a very simple database where you can add/remove strings in it, no
 The purpose of this project is to show the `Docker Volume Mount` concept and use case.  
 The way to show this is to run the Docker container twice: once without any volume mount, and the other with it, and then compare results between them.  
 
+### Screenshot
+<img src="screenshot.png" alt="screenshot" width="529" height="276">
+
 ### Prerequisites
 * Docker
 
