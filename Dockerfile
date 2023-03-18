@@ -9,4 +9,5 @@ USER 1001:1001
 WORKDIR /app
 COPY --from=build --chown=1001:1001 /app/node_modules ./node_modules
 COPY --chown=1001:1001 . .
+EXPOSE 3000
 ENTRYPOINT ["node", "src/index.js"]
