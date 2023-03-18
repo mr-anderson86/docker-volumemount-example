@@ -21,7 +21,6 @@ docker build -t simple-db .
 docker images
 # You'll see that the image you've built just now
 ```
-Access the web page at http://localhost:8080
 
 #### Second step: run the container with no volume mount
 ```bash
