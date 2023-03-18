@@ -36,7 +36,9 @@ docker run --name my-app -d -p 3000:3000 simple-db
   ```
 * Access again the web page at http://localhost:3000  
   Do you see your previous data, or is it deleted?
-  
+
+<br/>
+
 #### Third step: run the container with the volume mount
 The database is held within the container at `/etc/todos/todo.db`,  
 so we can either mount the file itself to the host, or the whole dirrectory.  
@@ -44,6 +46,7 @@ We're going to mount the whole directory:
 ```bash
 # First, make an empty dir wherever you want
 mkdir data
+# Then run the container with mounting the host directory into the DB dir in the container as follows:
 docker run --name my-app -d -p 3000:3000 -v ./data:/etc/todos simple-db
 ```
 * Access the web page at http://localhost:3000
