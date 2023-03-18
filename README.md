@@ -43,7 +43,7 @@ docker run --name my-app -d -p 3000:3000 simple-db
 <br/>
 
 #### Third step: run the container with the volume mount
-The database is held within the container at `/etc/todos/todo.db`,  
+The database is held within the container at `/app/todos/todo.db`,  
 so we can either mount the file itself to the host, or the whole dirrectory.  
 We're going to mount the whole directory:
 ```bash
@@ -51,7 +51,7 @@ We're going to mount the whole directory:
 docker rm -f my-app
 mkdir data
 # Then run the container with mounting the host directory into the DB dir in the container as follows:
-docker run --name my-app -d -p 3000:3000 -v $(pwd)/data:/etc/todos simple-db
+docker run --name my-app -d -p 3000:3000 -v $(pwd)/data:/app/todos simple-db
 ```
 * Access the web page at http://localhost:3000
 * Add a few strings
@@ -63,7 +63,7 @@ docker run --name my-app -d -p 3000:3000 -v $(pwd)/data:/etc/todos simple-db
 * then delete the container and recreate it  
   ```bash
   docker rm -f my-app
-  docker run --name my-app -d -p 3000:3000 -v $(pwd)/data:/etc/todos simple-db
+  docker run --name my-app -d -p 3000:3000 -v $(pwd)/data:/app/todos simple-db
   ```
 * Access again the web page at http://localhost:3000  
   Do you see your previous data now? :-)
@@ -72,6 +72,9 @@ docker run --name my-app -d -p 3000:3000 -v $(pwd)/data:/etc/todos simple-db
 ```bash
 docker rm -f my-app
 docker rmi simple-db
+
+# Cleanup data, be careful - cannot be returnd
+rm -rf data
 ```
 
 ### The end, enjoy :-)
