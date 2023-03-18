@@ -21,6 +21,7 @@ docker build -t simple-db .
 docker images
 # You'll see that the image you've built just now
 ```
+<br/>
 
 #### Second step: run the container with no volume mount
 ```bash
