@@ -7,7 +7,7 @@ Originally taken from the very basic Docker `getting-started` image.
 This app holds a very simple database where you can add/remove strings in it, nothing too smart.  
   
 The purpose of this project is to show the `Docker Volume Mount` concept and use case.  
-The way to show this is to run the Docker container twice: once without any volume mount, and the other with it, and then compare results between them.  
+The way to show this is to run the Docker container twice: once [without any volume mount](#second-step-run-the-container-with-no-volume-mount), and the other [with it](#third-step-run-the-container-with-the-volume-mount), and then compare results between them.  
 
 ### Screenshot
 <img src="screenshot.png" alt="screenshot" width="529" height="276">
